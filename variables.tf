@@ -22,3 +22,11 @@ variable "cluster_name" {
   type        = string
   default     = ""
 }
+
+variable "access_key" {
+  type = string
+}
+
+variable "secret_key" {
+  type = string
+}

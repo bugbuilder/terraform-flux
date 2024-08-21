@@ -5,11 +5,22 @@ terraform {
       version = ">=1.2.0"
     }
     github = {
-      source = "integrations/github"
+      source  = "integrations/github"
       version = "6.2.3"
+    }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.62.0"
     }
   }
 }
+
+provider "aws" {
+  region     = "us-east-1"
+  access_key = var.access_key
+  secret_key = var.secret_key
+}
+
 provider "flux" {
   kubernetes = {
     host                   = data.aws_eks_cluster.default.endpoint
